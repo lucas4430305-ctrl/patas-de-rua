@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#5c3825">
+    <title>Ajude os Animais</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5eee7;
+            color: #493021;
+        }
+
+        header {
+            background: #5c3825;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #79543c;
+            padding: 13px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 35px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #5c3825;
+        }
+
+        .sobre {
+            text-align: center;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #0002;
+        }
+
+        .doacao {
+            background: #e8d8c8;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .pix-chave {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 450px;
+            overflow-wrap: anywhere;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #5c3825;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .botao:hover {
+            background: #79543c;
+        }
+
+        footer {
+            background: #5c3825;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        @media(max-width: 500px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>🐾 Ajude os Animais</h1>
+        <p>
+            Sua ajuda pode transformar a vida de muitos animais.
+            Juntos podemos fazer a diferença!
+        </p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#doar">Fazer Pix</a>
+    </nav>
+
+    <!-- INÍCIO -->
+    <section id="inicio">
+        <h2>❤️ Toda vida merece cuidado</h2>
+        <p class="sobre">
+            Existem muitos animais que precisam de alimentação,
+            proteção, carinho e cuidados. Sua contribuição pode
+            ajudar a proporcionar uma vida melhor para eles.
+        </p>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <h2>Sobre o Projeto</h2>
+        <p class="sobre">
+            Este espaço foi criado para incentivar a ajuda aos animais.
+            Qualquer contribuição é bem-vinda e pode fazer a diferença
+            na vida de um cão ou gato que precisa de ajuda.
+        </p>
+    </section>
+
+    <!-- GALERIA DE FOTOS -->
+    <section id="galeria">
+        <h2>🐶 Conheça nossos animais</h2>
+
+        <div class="galeria">
+
+            <!-- IMAGEM 1 -->
+            <!-- Coloque sua foto na pasta imagens e altere o nome abaixo -->
+            <img src="imagens/cachorro1.jpg" alt="Cachorro precisando de ajuda">
+
+            <!-- IMAGEM 2 -->
+            <img src="imagens/gato1.jpg" alt="Gato precisando de ajuda">
+
+            <!-- IMAGEM 3 -->
+            <img src="imagens/cachorro2.jpg" alt="Cachorro">
+
+            <!-- IMAGEM 4 -->
+            <img src="imagens/gato2.jpg" alt="Gato">
+
+            <!-- IMAGEM 5 -->
+            <img src="imagens/cachorro3.jpg" alt="Cachorro">
+
+            <!-- IMAGEM 6 -->
+            <img src="imagens/gato3.jpg" alt="Gato">
+
+        </div>
+    </section>
+
+    <!-- DOAÇÃO PIX -->
+    <section id="doar">
+        <div class="doacao">
+
+            <h2>💚 Faça sua doação</h2>
+
+            <p>
+                Sua contribuição ajuda a oferecer alimentação,
+                cuidados e proteção aos animais.
+            </p>
+
+            <div class="pix-chave" id="chavePix">
+                COLOQUE_SUA_CHAVE_PIX_AQUI
+            </div>
+
+            <button class="botao" onclick="copiarPix()">
+                📋 Copiar chave Pix
+            </button>
+
+            <p id="mensagem" style="margin-top:15px;"></p>
+
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>🐾 Ajude os Animais</p>
+        <p>Juntos podemos fazer a diferença!</p>
+        <p>© 2026 - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function copiarPix() {
+            const chave = document.getElementById("chavePix").innerText.trim();
+
+            if (chave === "COLOQUE_SUA_CHAVE_PIX_AQUI") {
+                document.getElementById("mensagem").innerText =
+                    "Configure sua chave Pix no código primeiro.";
+                return;
+            }
+
+            navigator.clipboard.writeText(chave).then(() => {
+                document.getElementById("mensagem").innerText =
+                    "✅ Chave Pix copiada com sucesso!";
+            }).catch(() => {
+                document.getElementById("mensagem").innerText =
+                    "Não foi possível copiar automaticamente.";
+            });
+        }
+    </script>
+
+</body>
+</html>
